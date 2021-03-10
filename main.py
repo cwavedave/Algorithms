@@ -30,27 +30,36 @@ def isPalinedrome(s):
 
 print(isPalinedrome("!level#"))
 
-# BISECTION SEARCH Example
+# BISECTION SEARCH Example (MITX provided)
+def isIn(char, aStr):
+    '''
+    char: a single character
+    aStr: an alphabetized string
 
-l = 0
-h = 100
-c = False
+    returns: True if char is in aStr; False otherwise
+    '''
+    # Base case: If aStr is empty, we did not find the char.
+    if aStr == '':
+        return False
 
-print("Please think of a number between 0 and 100!")
-while c == False:
-    m = (l+h) // 2
+    # Base case: if aStr is of length 1, just see if the chars are equal
+    if len(aStr) == 1:
+        return aStr == char
 
-    print("Is your secret number", str(m),"?")
-    test = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly")
-    if test == "l":
-        l = m
-        m = (l + h) // 2
-    elif test == "h":
-        h = m
-        m = (l + h) // 2
-    elif test == "c":
-        c = True
+    # Base case: See if the character in the middle of aStr equals the
+    #   test character
+    midIndex = len(aStr) // 2
+    midChar = aStr[midIndex]
+    if char == midChar:
+        # We found the character!
+        return True
+
+    # Recursive case: If the test character is smaller than the middle
+    #  character, recursively search on the first half of aStr
+    elif char < midChar:
+        return isIn(char, aStr[:midIndex])
+
+    # Otherwise the test character is larger than the middle character,
+    #  so recursively search on the last half of aStr
     else:
-        print("Sorry, I did not understand your input.")
-
-print("Game over. Your secret number was:", str(m))
+        return isIn(char, aStr[midIndex + 1:])
