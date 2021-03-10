@@ -1,6 +1,6 @@
 # Algorithms
 
 <ul>
-  <li> Fibnoacci Sequence </li>
-  <li> Palindrome Checker </li>
+  <li> Fibnoacci Sequence (Divide & Conquer Algorithm example)</li>
+  <li> Palindrome Checker (Divide & Conquer Algorithm example)</li>
 </ul>
