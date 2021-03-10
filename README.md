@@ -1,4 +1,6 @@
 # Algorithms
 
-Fibnoacci Sequence
-Palindrome Checker 
+<ul>
+  <li> Fibnoacci Sequence </li>
+  <li> Palindrome Checker </li>
+</ul>
