@@ -29,3 +29,28 @@ def isPalinedrome(s):
     return isPal(simpleChar(s))
 
 print(isPalinedrome("!level#"))
+
+# BISECTION SEARCH Example
+
+l = 0
+h = 100
+c = False
+
+print("Please think of a number between 0 and 100!")
+while c == False:
+    m = (l+h) // 2
+
+    print("Is your secret number", str(m),"?")
+    test = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly")
+    if test == "l":
+        l = m
+        m = (l + h) // 2
+    elif test == "h":
+        h = m
+        m = (l + h) // 2
+    elif test == "c":
+        c = True
+    else:
+        print("Sorry, I did not understand your input.")
+
+print("Game over. Your secret number was:", str(m))
